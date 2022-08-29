@@ -19,7 +19,7 @@
         <p>O primeiro passo, é preencher esse formulário de inscrição.</p>
       </header>
 
-      <form>
+      <form id="my-form">
         <fieldset>
           <div class="fieldset-wrapper">
             <legend>Informações do Evento</legend>
@@ -28,21 +28,21 @@
               <label for="event-title">
                 Título do evento <span>(mínimo 8 caracteres)</span>
               </label>
-              <input type="text" id="event-title" />
+              <input type="text" id="event-title" minlength="8" required />
             </div>
 
             <div class="input-wrapper">
               <label for="event-link">
                 Link do evento <span>(comece com https://)</span>
               </label>
-              <input type="text" id="event-link" />
+              <input type="text" id="event-link" required />
             </div>
 
             <div class="input-wrapper">
               <label for="event-whatsapp">
                 Whatsapp para contato <span>(somente números)</span>
               </label>
-              <input type="number" id="event-whatsapp" />
+              <input type="number" id="event-whatsapp" required />
             </div>
 
             <div class="input-wrapper">
@@ -52,8 +52,9 @@
 
             <div class="input-wrapper">
               <label for="event-category">Categoria</label>
-              <select id="event-category">
-                <option value="live">Ao vivo</option>
+              <select id="event-category" required>
+                <option value=""></option>
+                <option value="live" required>Ao vivo</option>
                 <option value="podcast">Podcast</option>
                 <option value="mentorship">Mentoria</option>
               </select>
@@ -69,7 +70,7 @@
               <label for="event-email">
                 E-mail do administrador <span>(digite um email válido)</span>
               </label>
-              <input type="email" id="event-email" />
+              <input type="email" id="event-email" required />
             </div>
 
             <div class="input-wrapper">
@@ -77,7 +78,12 @@
                 Senha de acesso para os participantes
                 <span>(mínimo 8 caracteres)</span>
               </label>
-              <input type="password" id="event-password" />
+              <input
+                type="password"
+                id="event-password"
+                minlength="8"
+                required
+              />
             </div>
 
             <div class="checkbox-wrapper">
@@ -94,17 +100,17 @@
             <div class="col-3">
               <div class="input-wrapper">
                 <label for="event-date">Data</label>
-                <input type="date" id="event-date" />
+                <input type="date" id="event-date" required />
               </div>
 
               <div class="input-wrapper">
                 <label for="event-begin">Das</label>
-                <input type="time" id="event-begin" />
+                <input type="time" id="event-begin" required />
               </div>
 
               <div class="input-wrapper">
                 <label for="event-end">Até</label>
-                <input type="time" id="event-end" />
+                <input type="time" id="event-end" required />
               </div>
             </div>
           </div>
@@ -112,7 +118,12 @@
       </form>
 
       <footer>
-        <input class="button" type="submit" value="Salvar evento" />
+        <input
+          class="button"
+          type="submit"
+          value="Salvar evento"
+          form="my-form"
+        />
       </footer>
     </div>
   </body>

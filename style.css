@@ -202,3 +202,8 @@ footer .button {
 footer .button:hover {
   background-color: #08af53;
 }
+
+input:invalid,
+select:invalid {
+  border: 1px solid #f00;
+}
